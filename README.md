@@ -1,37 +1,88 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
 
-You can use the [editor on GitHub](https://github.com/mansiagar/calculator.git.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!---header-->
+    <style>
+        main {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(#32dbdb, #17c8e3, #24b6f0, #218cde);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        div {
+            max-width: 500px;
+            height: auto;
+            background-color: #00cec9;
+            padding: 30px;
+            box-shadow: 1px 1px 15px 3px #2d3436;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            text-shadow: 1px 2px 1px white;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        
+        lable {
+            display: block;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<body>
 
-### Markdown
+    <main>
+        <div>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+            <h1>TIP Calculator</h1>
+            <lable>BILL AMOUNT</lable>
+            <input type="text" name="" id="bill_amount">
+            <br>
+            <lable> TIP PERCENTAGE</lable>
+            <input type="text" name="" id="tip_perc">
+            <br>
+            <lable>TIP AMOUNT</lable>
+            <input type="text" name="" id="tip_total" disabled>
+            <br>
+            <lable>TOTAL AMOUNT</lable>
+            <input type="text" name="" id="total_billed" disabled>
+            <br>
 
-```markdown
-Syntax highlighted code block
+            <button onclick="tipcalcy()">TOTAL</button>
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+        </div>
+    </main>
+    <script>
+        const tipcalcy = () => {
+            let amount = document.getElementById('bill_amount').value;
 
-1. Numbered
-2. List
+            let PERCENTAGE = document.getElementById('tip_perc').value;
 
-**Bold** and _Italic_ and `Code` text
+            const tip = PERCENTAGE * (amount / 100);
 
-[Link](url) and ![Image](src)
-```
+            let tipamount = document.getElementById('tip_total').value = tip;
+            const totalAmount = tip + Number(amount);
+            let totalbill = document.getElementById('total_billed').value = totalAmount;
+        }
+    </script>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+</body>
 
-### Jekyll Themes
+</html>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mansiagar/calculator.git.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</html>
